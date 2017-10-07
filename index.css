@@ -1,0 +1,399 @@
+#taskbar {
+	width: 100%;
+	height: 40px;
+	background-color: #fff;
+}
+
+html {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #fff;
+	   max-width: 100%;
+    overflow-x: hidden;
+	
+}
+.searchbar {
+	position: relative;
+	font-size: 20px;
+	left: 50px;
+	top: 10px;
+	font-weight: 200;
+	width: 400px;
+	height: 38px;
+	border-color: lightgray;
+	border-style: solid;
+	border-radius: 25px;
+	background-color: #fff;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.wrap,
+.wrap2 {
+	width: 230px;
+	height: auto;
+	margin: 70px 100px;
+	float: left;
+}
+.wrap2 {
+	width: 210px !important;
+}
+div[class^="app-"] {
+	margin: 0 10px 10px 0;
+	height: 95px;
+	position: relative;
+	cursor: pointer;
+	transition: all 0.4s ease;
+	user-drag: element;
+	border: solid 2px transparent;
+}
+div[class^="app-"]:hover {
+	border: solid 2px mintcream;
+}
+div[class^="app-"]:active {
+	transform: scale(0.98, 0.98);
+}
+
+.appdrawer {
+	background-color: #f2f2f2;
+	width: 40px;
+	height: 400px;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	border-radius: 30px;
+	padding:.5em;
+}
+.app {
+	background-color: white;
+	width: 40px;
+	height: 40px;
+	border-radius: 30px;
+	user-select: none;
+}
+.musicplayer {
+	border-radius: 15px;
+	overflow: hidden;
+	width: 450px;
+	height: 450px;
+}
+.musicplayerborder {
+	position: absolute;
+	top: 40px;
+	right: 24px;
+	border-radius: 15px;
+	overflow: hidden;
+	width: 450px;
+	height: 450px;
+}
+.appwindow {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	position: absolute;
+	font-family: "lato";
+	font-size: 20px;
+	border: none;
+	font-weight: 200;
+	left: 0px;
+	border-radius: 15px;
+	background-color: #f2f2f2;
+
+	bottom: 0px;
+
+}
+.blur { 
+
+	  -webkit-filter: url('#blur');
+  filter: url('#blur');
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+
+}
+.blurlaunch {
+	transition-duration: 2s;
+	  -webkit-filter: url('#blur');
+  filter: url('#blur');
+  -webkit-filter: blur(8px);
+  filter: blur(8px);
+
+}
+.open {
+ -webkit-filter: url('#blur');
+  filter: url('#blur');
+  -webkit-filter: blur(0px);
+  filter: blur(0px);
+}
+.appwindow2 {
+	    
+	position: absolute;
+	font-family: "lato";
+	font-size: 20px;
+	border: none;
+	font-weight: 200;
+	left: 0px;
+	border-radius: 15px;
+	background-color: #f2f2f2;
+
+	bottom: 0px;
+}
+.writeboxarea{
+	position:relative;
+	top:30px;
+	float:left;
+  font-family: lato;
+  font-size: 100%;
+font-weight:300;
+  color: #33383D;
+  -webkit-font-smoothing: antialiased;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 0px solid #D9D9D9;
+  border-radius: 3px;
+    font-family: lato;
+
+font-weight:400;
+}
+.menubar {
+	background-color: #e5e5e5;
+	height: 35px;
+	position: absolute;
+	left: 0px;
+	top: -1px;
+	border-radius: 15px 15px 0px 0px;
+}
+.menubarhider {
+	background-color: #f2f2f2;
+	height: 35px;
+	position: absolute;
+	left: 0px;
+	top: 15px;
+	border-radius: 15px;
+}
+.wave {
+	opacity: 0.4;
+	position: absolute;
+	top: 3%;
+	left: 40%;
+	background: #0af;
+	width: 1900px;
+	height: 1900px;
+	margin-left: -250px;
+	margin-top: 500px;
+	transform-origin: 50% 48%;
+	border-radius: 43%;
+	animation: drift 20000ms infinite linear;
+	z-index: -1;
+}
+.wave.-three {
+	animation: drift 10000ms infinite linear;
+	z-index: -3;
+}
+
+.wave.-two {
+	animation: drift 10000ms infinite linear;
+	opacity: 0.1;
+	background: yellow;
+	z-index: -2;
+}
+@keyframes drift {
+	from {
+		transform: rotate(0deg);
+	}
+	from {
+		transform: rotate(360deg);
+	}
+}
+.hidewiki {
+	background-image: url("http://oi68.tinypic.com/sffgoi.jpg");
+	border: none;
+	background-size: 30px 30px;
+	height: 30px;
+	width: 30px;
+	float: right;
+	border-radius: 0px 15px 0px 0px;
+}
+
+.appwindow wikiapp {
+	width: 468px;
+	height: 30px;
+
+	position: relative;
+	top: 0px;
+}
+.hidemusic {
+	background-image: url("http://oi68.tinypic.com/sffgoi.jpg");
+	border: none;
+	background-size: 30px 30px;
+	height: 30px;
+	width: 30px;
+	float: right;
+	border-radius: 0px 15px 0px 0px;
+}
+.appwindow musicapp {
+	width: 500px;
+	height: 500px;
+
+	position: relative;
+	top: 0px;
+}
+.hidewrite {
+	background-image: url("http://oi68.tinypic.com/sffgoi.jpg");
+	border: none;
+	background-size: 30px 30px;
+	height: 30px;
+	width: 30px;
+	float: right;
+	border-radius: 0px 15px 0px 0px;
+}
+.appwindow writeapp {
+	width: 500px;
+	height: 500px;
+
+	position: relative;
+	top: 0px;
+}
+.hidenote {
+	background-image: url("http://oi68.tinypic.com/sffgoi.jpg");
+	border: none;
+	background-size: 30px 30px;
+	height: 30px;
+	width: 30px;
+	float: right;
+	border-radius: 0px 15px 0px 0px;
+}
+.appwindow noteapp {
+	width: 500px;
+	height: 500px;
+
+	position: relative;
+	top: 0px;
+}
+
+.body{
+	position: fixed; 
+}
+
+
+a,
+a:visited {
+  color: #08C;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: #69c773;
+  cursor: pointer;
+}
+
+a.delete-file,
+a.delete-file:visited {
+  color: #30bdff;
+  margin-left: 0.5rem;
+}
+
+#file-form {
+  width: 80%;
+  float: left;
+}
+
+
+input,
+textarea {
+
+}
+
+textarea {
+  min-height: 300px;
+}
+
+
+
+button:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+#files {
+  width: 230px;
+  float: right;
+}
+
+#files ul {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  height: 330px;
+  overflow-y: auto;
+  list-style: none;
+  background: #Fff;
+  border: 1px solid #D9D9D9;
+  border-radius: 3px;
+ 
+}
+
+#files li {
+  padding: 0.5rem 0;
+}
+
+#messages {
+  display: inline-block;
+  font-weight: bold;
+  color: #30bdff;
+  margin-left: 1rem;
+}
+
+/* Clearfix Utils */
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.clearfix:after {
+  clear: both;
+}
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+
+.titlebox{
+	position:relative;
+  bottom: -50em;
+
+	
+}
+#Title {
+
+  font-family: lato;
+  font-weight: 300;
+  font-size: 20px;
+  color: #fff;
+}
+
+#Title2 {
+  
+  font-family: lato;
+  font-weight: 400;
+  font-size: 20px;
+  color: #fff;
+}
+.frameOverlay {
+     height: 530px;
+     width: 500px;
+     background: rgba(0,0,0,0); 
+     position: absolute;
+     top: 0;
+     left: 0;
+     display: none;
+	z-index:11;
+}
