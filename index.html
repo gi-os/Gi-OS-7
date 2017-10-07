@@ -1,0 +1,319 @@
+<link href='index.css' rel='stylesheet' type='text/css'>
+<script src="index.js">
+</script>
+<div onload="launch()" class="blurlaunch">
+
+<header>
+
+ <title>The Directory</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+ <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css">
+ <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+ <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+ <script src="http://c.boylett.uk/libraries/Blob.js"></script>
+ <script src="http://c.boylett.uk/libraries/FileSaver.min.js"></script>
+ <script src="http://c.boylett.uk/libraries/canvas-toBlob.js"></script>
+ <div class="menu-wrap" Style="position:relative; Float:right; left:-65px; top:-20px;">
+  <nav class="menu">
+   <ul class="clearfix">
+
+
+   </ul>
+  </nav>
+ </div>
+ <!--bar at the top-->
+ <div id="taskbar" style="">
+  <div id="clockbox" style="font:32pt lato; color:black; font-weight:200; Opacity:0.5; position:absolute;  right:5px; top:5px; float:right;">
+   <script type="text/javascript">
+    function GetClock() {
+     var d = new Date();
+     var nhour = d.getHours(),
+      nmin = d.getMinutes(),
+      ap;
+     if (nhour == 0) {
+      ap = " AM";
+      nhour = 12;
+     } else if (nhour < 12) {
+      ap = " AM";
+     } else if (nhour == 12) {
+      ap = " PM";
+     } else if (nhour > 12) {
+      ap = " PM";
+      nhour -= 12;
+     }
+    
+     if (nmin <= 9) nmin = "0" + nmin;
+    
+     document.getElementById("clockbox").innerHTML =
+      "" + nhour + ":" + nmin + ap + "";
+    }
+    
+    window.onload = function() {
+     GetClock();
+     setInterval(GetClock, 1000);
+    };
+   </script>
+  </div>
+  <form method="get" action="https://www.google.com/search?q=" opacity="0.3" target="_blank">
+   <input name="q" placeholder="Google" class="searchbar" target="_blank">
+
+  </form>
+</header>
+<body>
+
+<div class="appdrawer" onmouseover="hoverwrite()">
+ <div><div class="app write" id="showwrite"> <i class="material-icons md-dark" style="left:5px; top:5px; position:relative; font-size:30px;">subject</i>
+ </div><h1></h1></div>
+
+	<div>
+ <div><div class="app music" onmouseover="hovermusic()" id="showmusic"> <i class="material-icons md-dark" style="left:5px; top:5px; position:relative; font-size:30px;">music_note</i>
+ </div><h1></h1></div>
+  <div><div class="app wiki" onmouseover="hoverwiki()" id="showwiki"> <i class="material-icons md-dark" style="left:5px; top:5px; position:relative; font-size:30px;">search</i>
+ </div><h1></h1></div>
+ <div><div class="app null" onmouseover="hovernote()"id="shownote"> <i class="material-icons md-dark" style="left:5px; top:5px; position:relative; font-size:30px;">note</i>
+ </div><h1></h1></div>
+ <div><div class="app help" onmouseover="hoverhelp()"id="showhelp"> <i class="material-icons md-dark" style="left:5px; top:5px; position:relative; font-size:30px;">help</i>
+ </div><h1></h1></div>
+</div>
+	</div>
+<!--waves in background-->
+<div class='wave -one'></div>
+<div class='wave -two'></div>
+<div class='wave -three'></div>
+<!--Wikipedia app-->
+
+
+
+
+<div>
+<div class="appboxwiki"style="position:relative; top:30em; left:42%;">
+	<script>
+     //hide app
+     $(document).ready(function() {
+      $("#hidewiki").click(function() {
+       $('div[class^="appboxwiki"]').hide();
+      });
+      //show app
+      $("#showwiki").click(function() {
+       $('div[class^="appboxwiki"]').show();
+      });
+      $('div[class^="appboxwiki"]').hide();
+     });
+		
+    </script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+<style>
+ #draggablewiki {
+  width: 500px;
+  height: 60px;
+ }
+</style>
+<script>
+ $(function() {
+  $("#draggablewiki").draggable();
+ });
+	
+</script>
+
+
+ <center>
+
+   <div  id="draggablewiki" class="appwindow wikiapp" style="position:absolute; width:500px; height:30px; border:none; 	">
+		
+   <div class="menubar" style="width:500px; position:absolute; top:-12px;	">
+
+    <button class="hidewiki" id="hidewiki">
+			</button>
+    <div class="menubarhider" style="width:500px; position:absolute;"></div>
+    <!---->
+  
+
+    <form method="get" action="https://en.wikipedia.org/w/index.php?title=" opacity="0.3" target="_blank">
+     <input placeholder="  Search Wikipedia." name="title" class="appwindow2" target="_blank" style="position:absolute; font-family:'lato'; font-size:20px; border:none; font-weight:200; top:16px; left:0px;  width:500px; height:30px;">
+    </form>
+   </div>
+
+   </form>
+
+</div>
+</div>
+		<div class="appboxnote" style="position:relative; top:30em; left:38%;">
+		
+		   <script>
+       //hide app
+       $(document).ready(function() {
+        $("#hidenote").click(function() {
+         $('div[class^="appboxnote"]').hide();
+        });
+        //show app
+        $("#shownote").click(function() {
+         $('div[class^="appboxnote"]').show();
+        });
+        $('div[class^="appboxnote"]').hide();
+       });
+      </script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+   #draggablenote {
+    width: 450px;
+    height: 400px;
+   }
+  </style>
+
+ <script>
+   $(function() {
+    $("#draggablenote").draggable();
+   });
+  </script>
+   <center>
+
+	  <div id="draggablenote" class="appwindow noteapp" style="position:absolute; width:500px;height:500px; border:none; 	background-color:none;"> 
+			
+     <div class="menubar" style="width:500px; position:absolute; top:-12px;	">
+
+      <button class="hidenote" id="hidenote">
+			</button>
+      <div class="menubarhider" style="width:500px; position:absolute; 	"></div>
+      <!---->
+ 
+      <center>
+				<div class="frameOverlay"></div>
+       <div class="musicplayerborder">
+        <iframe width="450" height="450" class="musicplayer" src="https://s.codepen.io/gi-os/debug/aLqYPp/dXkqBbpWzKWM" frameborder="0" allowfullscreen></iframe>
+       </div>
+      </center>
+      </form>
+     </div>
+
+   </center>
+   </script>
+
+
+</div>
+
+  <div class="appboxmusic" style="position:relative; top:30em; left:34%;">
+		
+		   <script>
+       //hide app
+       $(document).ready(function() {
+        $("#hidemusic").click(function() {
+         $('div[class^="appboxmusic"]').hide();
+        });
+        //show app
+        $("#showmusic").click(function() {
+         $('div[class^="appboxmusic"]').show();
+        });
+        $('div[class^="appboxmusic"]').hide();
+       });
+      </script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+   #draggablemusic {
+    width: 450px;
+    height: 400px;
+   }
+  </style>
+
+
+   <center>
+
+    <div id="draggablemusic" class="appwindow musicapp" style="position:absolute; width:500px;height:500px; border:none; 	background-color:none;"> 
+			
+     <div class="menubar" style="width:500px; position:absolute; top:-12px;	">
+
+      <button class="hidemusic" id="hidemusic">
+			</button>
+      <div class="menubarhider" style="width:500px; position:absolute; 	"></div>
+      <!---->
+ 
+      <center>
+				<div class="frameOverlay"></div>
+       <div class="musicplayerborder">
+        <iframe width="450" height="450" class="musicplayer" src="https://www.youtube.com/embed/AQBh9soLSkI?" frameborder="0" allowfullscreen></iframe>
+       </div>
+      </center>
+      </form>
+     </div>
+
+   </center>
+   </script>
+
+
+</div>
+	 
+	  <div class="appboxwrite" style="position:relative; top:30em; left:30%;">
+		   <script>
+       //hide app
+       $(document).ready(function() {
+        $("#hidewrite").click(function() {
+         $('div[class^="appboxwrite"]').hide();
+        });
+        //show app
+        $("#showwrite").click(function() {
+         $('div[class^="appboxwrite"]').show();
+        });
+        $('div[class^="appboxwrite"]').hide();
+       });
+      </script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+   #draggablewrite {
+    width: 450px;
+    height: 400px;
+   }
+  </style>
+  <script>
+   $(function() {
+    $("#draggablewrite").draggable();
+   });
+  </script>
+
+
+   <center>
+
+    <div id="draggablewrite" class="appwindow writeapp" style="position:absolute; width:500px;height:500px; border:none; 	background-color:none;"> 
+
+     <div class="menubar" style="width:500px; position:absolute; top:-12px;	">
+
+      <button class="hidewrite" id="hidewrite">
+			</button>
+      <div class="menubarhider" style="width:500px; position:absolute; 	"></div>
+      <!---->
+ 
+      <center>
+<div class="frameOverlay"></div>
+				<div class="musicplayerborder">
+        <iframe width="450" height="450" class="musicplayer" src="https://s.codepen.io/gi-os/debug/oGpmoX/xJkjOWajGVwM" frameborder="0" allowfullscreen>						</iframe>
+
+
+     </div>
+
+   </center>
+   </script>
+
+
+</div>
+</div>
+	</div>
+
+<center>
+<div class="titlebox">
+<p1 id="Title">Gi-OS </p1><p1 id="Title2">7 α4</p1>
+                  </div>
+</center>
+</body>
