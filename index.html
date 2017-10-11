@@ -1,11 +1,8 @@
-<link href='index.css' rel='stylesheet' type='text/css'>
-<script src="index.js">
-</script>
 <div onload="launch()" class="blurlaunch">
 
 <header>
 
- <title>Gi-OS 7</title>
+ <title>The Directory</title>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css">
@@ -64,8 +61,8 @@
 </header>
 <body>
 
-<div class="appdrawer" onmouseover="hoverwrite()">
- <div><div class="app write" id="showwrite"> <i class="material-icons md-dark" style="left:5px; top:5px; position:relative; font-size:30px;">subject</i>
+<div class="appdrawer" onmouseover="hoverwrote()">
+ <div><div class="app wrote" id="showwrote"> <i class="material-icons md-dark" style="left:5px; top:5px; position:relative; font-size:30px;">subject</i>
  </div><h1></h1></div>
 
 	<div>
@@ -188,7 +185,7 @@
       <center>
 				<div class="frameOverlay"></div>
        <div class="musicplayerborder">
-        <iframe width="450" height="450" class="musicplayer" src="https://s.codepen.io/gi-os/debug/aLqYPp/dXkqBbpWzKWM" frameborder="0" allowfullscreen></iframe>
+        <iframe width="450" height="530" class="musicplayer" src="https://codepen.io/gi-os/full/aLqYPp/" frameborder="0" allowfullscreen style="position:relative; top:-80px;"></iframe>
        </div>
       </center>
       </form>
@@ -226,7 +223,11 @@
    }
   </style>
 
-
+ <script>
+   $(function() {
+    $("#draggablemusic").draggable();
+   });
+  </script>
    <center>
 
     <div id="draggablemusic" class="appwindow musicapp" style="position:absolute; width:500px;height:500px; border:none; 	background-color:none;"> 
@@ -252,19 +253,20 @@
 
 
 </div>
-	 
-	  <div class="appboxwrite" style="position:relative; top:30em; left:30%;">
+
+	  <div class="appboxwrote" style="position:relative; top:30em; left:34%;">
+		
 		   <script>
        //hide app
        $(document).ready(function() {
-        $("#hidewrite").click(function() {
-         $('div[class^="appboxwrite"]').hide();
+        $("#hidewrote").click(function() {
+         $('div[class^="appboxwrote"]').hide();
         });
         //show app
-        $("#showwrite").click(function() {
-         $('div[class^="appboxwrite"]').show();
+        $("#showwrote").click(function() {
+         $('div[class^="appboxwrote"]').show();
         });
-        $('div[class^="appboxwrite"]').hide();
+        $('div[class^="appboxwrote"]').hide();
        });
       </script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -272,35 +274,34 @@
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css">
   <style>
-   #draggablewrite {
+   #draggablewrote {
     width: 450px;
     height: 400px;
    }
   </style>
-  <script>
+ <script>
    $(function() {
-    $("#draggablewrite").draggable();
+    $("#draggablewrote").draggable();
    });
   </script>
 
-
    <center>
 
-    <div id="draggablewrite" class="appwindow writeapp" style="position:absolute; width:500px;height:500px; border:none; 	background-color:none;"> 
-
+    <div id="draggablewrote" class="appwindow wroteapp" style="position:absolute; width:500px;height:500px; border:none; 	background-color:none;"> 
+			
      <div class="menubar" style="width:500px; position:absolute; top:-12px;	">
 
-      <button class="hidewrite" id="hidewrite">
+      <button class="hidewrote" id="hidewrote">
 			</button>
       <div class="menubarhider" style="width:500px; position:absolute; 	"></div>
-      <!---->
  
       <center>
-<div class="frameOverlay"></div>
-				<div class="musicplayerborder">
-        <iframe width="450" height="450" class="musicplayer" src="https://s.codepen.io/gi-os/debug/oGpmoX/xJkjOWajGVwM" frameborder="0" allowfullscreen>						</iframe>
-
-
+				<div class="frameOverlay"></div>
+       <div class="musicplayerborder">
+        <iframe width="450" height="450" class="musicplayer" src="https://gi-os.github.io/Gi-OS-7/write.html" frameborder="0" allowfullscreen></iframe>
+       </div>
+      </center>
+      </form>
      </div>
 
    </center>
@@ -308,153 +309,18 @@
 
 
 </div>
-</div>
+  
 	</div>
 
+
+</body>
 <center>
 <div class="titlebox">
-<p1 id="Title">Gi-OS </p1><p1 id="Title2">7 α4</p1>
+<p1 id="Title">Gi-OS </p1><p1 id="Title2">7 α9</p1>
                   </div>
 </center>
-</body>
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<script>
-		$(".appboxmusic").click(function() {
-	$('div[class^="appboxwiki"]').css("z-index", "0");
-	$('div[class^="appboxwiki"]').animate({ opacity: 0.8 });
-	$('div[class^="appboxwiki"]').addClass("blur");
-	$('div[class^="appboxwrite"]').css("z-index", "0");
-	$('div[class^="appboxwrite"]').animate({ opacity: 0.8 });
-	$('div[class^="appboxwrite"]').addClass("blur");
-	$('div[class^="appboxnote"]').css("z-index", "0");
-	$('div[class^="appboxnote"]').animate({ opacity: 0.8 });
-	$('div[class^="appboxnote"]').addClass("blur");
-	$(this).removeClass("blur");
-	$(this).css("z-index", "10");
-	$(this).animate({ opacity: 1 });
-});
-
-$(".appboxwiki").click(function() {
-	$('div[class^="appboxmusic"]').css("z-index", "0");
-	$('div[class^="appboxmusic"]').animate({ opacity: 0.8 });
-	$('div[class^="appboxmusic"]').addClass("blur");
-	$('div[class^="appboxwrite"]').css("z-index", "0");
-	$('div[class^="appboxwrite"]').animate({ opacity: 0.8 });
-	$('div[class^="appboxwrite"]').addClass("blur");
-	$('div[class^="appboxnote"]').css("z-index", "0");
-	$('div[class^="appboxnote"]').animate({ opacity: 0.8 });
-	$('div[class^="appboxnote"]').addClass("blur");
-	$(this).removeClass("blur");
-	$(this).css("z-index", "10");
-	$(this).animate({ opacity: 1 });
-});
-
-$(".appboxwrite").click(function() {
-	$('div[class^="appboxmusic"]').css("z-index", "0");
-	$('div[class^="appboxmusic"]').animate({ opacity: 0.8 });
-	$('div[class^="appboxmusic"]').addClass("blur");
-	$('div[class^="appboxwiki"]').css("z-index", "0");
-	$('div[class^="appboxwiki"]').animate({ opacity: 0.8 });
-	$('div[class^="appboxwiki"]').addClass("blur");
-	$('div[class^="appboxnote"]').css("z-index", "0");
-	$('div[class^="appboxnote"]').animate({ opacity: 0.8 });
-	$('div[class^="appboxnote"]').addClass("blur");
-	$(this).removeClass("blur");
-	$(this).css("z-index", "10");
-	$(this).animate({ opacity: 1 });
-});
-$(".appboxnote").click(function() {
-	$('div[class^="appboxmusic"]').css("z-index", "0");
-	$('div[class^="appboxmusic"]').animate({ opacity: 0.8 });
-	$('div[class^="appboxmusic"]').addClass("blur");
-	$('div[class^="appboxwiki"]').css("z-index", "0");
-	$('div[class^="appboxwiki"]').animate({ opacity: 0.8 });
-	$('div[class^="appboxwrite"]').addClass("blur");
-	$('div[class^="appboxwrite"]').css("z-index", "0");
-	$('div[class^="appboxwrite"]').animate({ opacity: 0.8 });
-	$('div[class^="appboxwrite"]').addClass("blur");
-	$(this).removeClass("blur");
-	$(this).css("z-index", "10");
-	$(this).animate({ opacity: 1 });
-});
-$(function() {
-	$("#draggablemusic").draggable({
-		start: function() {
-			$(".frameOverlay").fadeIn("fast");
-		},
-		stop: function() {
-			$(".frameOverlay").fadeOut("fast");
-		}
-	});
-});
-$(function() {
-	$("#draggablenote").draggable({
-		start: function() {
-			$(".frameOverlay").fadeIn("fast");
-		},
-		stop: function() {
-			$(".frameOverlay").fadeOut("fast");
-		}
-	});
-});
-(function() {
-	$("#draggablenote").draggable({
-		start: function() {
-			$(".frameOverlay").fadeIn("fast");
-		},
-		stop: function() {
-			$(".frameOverlay").fadeOut("fast");
-		}
-	});
-});
-(function() {
-	$("#draggablewiki").draggable({
-		start: function() {
-			$(".frameOverlay").fadeIn("fast");
-		},
-		stop: function() {
-			$(".frameOverlay").fadeOut("fast");
-		}
-	});
-});
-
-window.setTimeout(function() {
-	$(".blurlaunch").addClass("open");
-}, 700);
-	</script>
 <style>
-	#taskbar {
+#taskbar {
 	width: 100%;
 	height: 40px;
 	background-color: #fff;
@@ -846,11 +712,115 @@ button:hover {
 .frameOverlay {
      height: 530px;
      width: 500px;
-     background: rgba(0,0,0,0); 
+     background: #30bdff ; 
      position: absolute;
      top: 0;
      left: 0;
      display: none;
 	z-index:11;
 }
-	</style>
+</style>
+<script>
+	$(".appboxmusic").click(function() {
+	$('div[class^="appboxwiki"]').css("z-index", "0");
+	$('div[class^="appboxwiki"]').animate({ opacity: 0.8 });
+	$('div[class^="appboxwiki"]').addClass("blur");
+	$('div[class^="appboxwrite"]').css("z-index", "0");
+	$('div[class^="appboxwrite"]').animate({ opacity: 0.8 });
+	$('div[class^="appboxwrite"]').addClass("blur");
+	$('div[class^="appboxnote"]').css("z-index", "0");
+	$('div[class^="appboxnote"]').animate({ opacity: 0.8 });
+	$('div[class^="appboxnote"]').addClass("blur");
+	$(this).removeClass("blur");
+	$(this).css("z-index", "10");
+	$(this).animate({ opacity: 1 });
+});
+
+$(".appboxwiki").click(function() {
+	$('div[class^="appboxmusic"]').css("z-index", "0");
+	$('div[class^="appboxmusic"]').animate({ opacity: 0.8 });
+	$('div[class^="appboxmusic"]').addClass("blur");
+	$('div[class^="appboxwrite"]').css("z-index", "0");
+	$('div[class^="appboxwrite"]').animate({ opacity: 0.8 });
+	$('div[class^="appboxwrite"]').addClass("blur");
+	$('div[class^="appboxnote"]').css("z-index", "0");
+	$('div[class^="appboxnote"]').animate({ opacity: 0.8 });
+	$('div[class^="appboxnote"]').addClass("blur");
+	$(this).removeClass("blur");
+	$(this).css("z-index", "10");
+	$(this).animate({ opacity: 1 });
+});
+
+$(".appboxwrite").click(function() {
+	$('div[class^="appboxmusic"]').css("z-index", "0");
+	$('div[class^="appboxmusic"]').animate({ opacity: 0.8 });
+	$('div[class^="appboxmusic"]').addClass("blur");
+	$('div[class^="appboxwiki"]').css("z-index", "0");
+	$('div[class^="appboxwiki"]').animate({ opacity: 0.8 });
+	$('div[class^="appboxwiki"]').addClass("blur");
+	$('div[class^="appboxnote"]').css("z-index", "0");
+	$('div[class^="appboxnote"]').animate({ opacity: 0.8 });
+	$('div[class^="appboxnote"]').addClass("blur");
+	$(this).removeClass("blur");
+	$(this).css("z-index", "10");
+	$(this).animate({ opacity: 1 });
+});
+$(".appboxnote").click(function() {
+	$('div[class^="appboxmusic"]').css("z-index", "0");
+	$('div[class^="appboxmusic"]').animate({ opacity: 0.8 });
+	$('div[class^="appboxmusic"]').addClass("blur");
+	$('div[class^="appboxwiki"]').css("z-index", "0");
+	$('div[class^="appboxwiki"]').animate({ opacity: 0.8 });
+	$('div[class^="appboxwrite"]').addClass("blur");
+	$('div[class^="appboxwrite"]').css("z-index", "0");
+	$('div[class^="appboxwrite"]').animate({ opacity: 0.8 });
+	$('div[class^="appboxwrite"]').addClass("blur");
+	$(this).removeClass("blur");
+	$(this).css("z-index", "10");
+	$(this).animate({ opacity: 1 });
+});
+$(function() {
+	$("#draggablemusic").draggable({
+		start: function() {
+			$(".frameOverlay").fadeIn("fast");
+		},
+		stop: function() {
+			$(".frameOverlay").fadeOut("fast");
+		}
+	});
+});
+$(function() {
+	$("#draggablenote").draggable({
+		start: function() {
+			$(".frameOverlay").fadeIn("fast");
+		},
+		stop: function() {
+			$(".frameOverlay").fadeOut("fast");
+		}
+	});
+});
+$(function() {
+	$("#draggablewiki").draggable({
+		start: function() {
+			$(".frameOverlay").fadeIn("fast");
+		},
+		stop: function() {
+			$(".frameOverlay").fadeOut("fast");
+		}
+	});
+});
+$(function() {
+	$("#draggablewrote").draggable({
+		start: function() {
+			$(".frameOverlay").fadeIn("fast");
+		},
+		stop: function() {
+			$(".frameOverlay").fadeOut("fast");
+		}
+	});
+});
+
+window.setTimeout(function() {
+	$(".blurlaunch").addClass("open");
+}, 700);
+</script>
