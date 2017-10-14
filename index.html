@@ -1,13 +1,12 @@
 <header>
 <div onload="launch()" class="blurlaunch" style="z-index:300;">
-	<img id="profileimg" class="profileimg" src="http://i67.tinypic.com/w8vuit.png"></img>
+	<img id="profileimg" class="profileimg" src=""></img>
 	<div class="loading"></div>
 	<center>
 <h1 class="usernametext" id="usernametext" style="z-index:10;">Now Loading.</h1>
 		  <div class="loaderborder">
         <iframe width="450" height="530" class="loader" src="" frameborder="0" allowfullscreen style="position:relative; top:-80px;"></iframe>
 		<h1 class="usernametext"  style="z-index:10;">Gi-OS 7</h1>
-   
 			
 	</center>
 </div>
@@ -676,13 +675,7 @@ position:absolute;
 	bottom: 0px;
 }
 .profileimg{
-	width:100px;
-	height:100px;
-	position:absolute;
-	top:10%;
-	left:10%;
-	float:left;
-	
+
 	border-style:10px solid #30bdff;
 	border-radius:50px;
 	border-radius:50px;
@@ -1211,9 +1204,9 @@ $(function() {
 
 window.setTimeout(function() {
 $(".blurlaunch").addClass("open");
-	}, 700);
+	}, 800);
 window.setTimeout(function() {$(".blurlaunch").fadeOut("fast");
-}, 1600);
+}, 5000);
 window.setTimeout(function() {
 
 	$(".usernametext").addClass("opentext");
@@ -1313,9 +1306,10 @@ if(localStorage.getItem("usernametext") === null ){
 	 } else{
 		 document.getElementById("usernametext").innerHTML = "Welcome home, "+ 
 			 localStorage.getItem("usernametext");
+		 		$('#profileimg').addClass("login");
 document.getElementById("username").innerHTML = localStorage.getItem("usernametext");
 		 $("#profileimg").attr("src", localStorage.getItem("profileimage"));
-	
+
 		 document.getElementById("profileimg").attr("src", localStorage.getItem("profileimage"));
 	
 	 }
