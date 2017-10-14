@@ -1,8 +1,15 @@
-
-<div onload="launch()" class="blurlaunch">
-
 <header>
-
+<div onload="launch()" class="blurlaunch" style="z-index:300;">
+	<img id="profileimg" class="profileimg" src="http://i67.tinypic.com/w8vuit.png"></img>
+	<div class="loading"></div>
+	<center>
+<h1 class="usernametext" id="usernametext" style="z-index:10;">Now Loading.</h1>
+		  <div class="loaderborder">
+        <iframe width="450" height="530" class="loader" src="https://codepen.io/gi-os/full/Jrmjwe/" frameborder="0" allowfullscreen style="position:relative; top:-80px;"></iframe>
+		<h1 class="usernametext"  style="z-index:10;">Gi-OS 7</h1>
+			
+	</center>
+</div>
  <title>Gi-OS 7</title>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
@@ -74,11 +81,16 @@
             </g>
             <polygon class="hidden" id="charge-path" points="129.64 37.69 189.71 37.69 165.26 80.27 191.19 80.27 127.74 146.66 136.81 96.07 111.94 96.5 129.64 37.69" fill="#f1c40f">
             	<animate attributeName="fill" from="#f1c40f" to="#fcd536" dur="2s" repeatCount="indefinite" />
-            </polygon>
+            </polygon> 
           </svg>
 <h1 class="username" id="username" ></h1>
+	
+</div>
+<div class="lowpowermode"id="lowpowermode">
+	<center>
+	<h1 class="lowpowertext"> Low Power Mode Is On.</h1>
+	</center>
 		 </div>
-
         </div>
 
         <script src="main.js"></script>
@@ -110,9 +122,11 @@
 </div>
 	</div>
 <!--waves in background-->
-<div class='wave -one'></div>
-<div class='wave -two'></div>
-<div class='wave -three'></div>
+	<div class="waves">
+<div class='wave -one' id="wave"></div>
+<div class='wave -two' id="wave"></div>
+<div class='wave -three'id="wave"></div>
+																 </div>
 <!--Wikipedia app-->
 
 
@@ -392,6 +406,10 @@
 <input type="text" name="fname"id="backgroundselect" class="bar" placeholder="Image Adress"><br>
 <input type="button" value="Set" name="button" class="button" onClick="testResults(this.form)">
 </form>
+						 	 <form id="backgroundselect2" method="get">Set Profile Picture:          
+<input type="text" name="profpic"id="backgroundselect" class="bar" placeholder="Image Adress"><br>
+<input type="button" value="Set" name="button" class="button" onClick="testrosalt(this.form)">
+</form>
 					 <form id="namewrite" method="get"> Set Name:
 <input type="text" name="username"id="backgroundselect" class="bar"placeholder="Username"><br>
 <input type="button" value="Set" name="button" class="button" onClick="testrasult(this.form)">
@@ -416,21 +434,28 @@
 <center>
 
 <div class="titlebox">
-<p1 id="Title">Gi-OS </p1><p1 id="Title2">7 α17</p1>
+<p1 id="Title">Gi-OS </p1><p1 id="Title2">7 α18</p1>
                   </div>
 		<div id="result"></div>
 </center>
 <center>	
-<h1 class="usernametext" id="usernametext" style="z-index:10;">Welcome Home</h1>
+<h1 class="usernametext" id="usernametext" style="z-index:10;"></h1>
 	
 </center>
 <style>
-	#taskbar {
+	
+
+
+#taskbar {
 	width: 100%;
 	height: 40px;
 
 }
-
+.lpm{
+	width:0px;
+	height:0px;
+	opacity:0;
+}
 html {
 	height: 100%;
 	margin: 0;
@@ -464,8 +489,28 @@ position: absolute;
 .searchbar::placeholder{
 	color:#bcbcbc;
 }
-
-
+.lowpowertext{
+	font:13pt lato; 
+	color:#bcbcbc; 
+	font-weight:400; 
+	position:relative;
+	top:-2px;
+}
+.lowpowermode{
+		background-color: #f2f2f2;
+	width: 200px;
+	height: 40px;
+	float:right;
+	position:absolute;
+	right:-400px;
+	top:100px;
+	border-radius: 30px;
+	opacity:.9;
+}
+.slidein{
+	transition-duration: 2s;
+	right:0px;
+}
 .infobar{
 		background-color: #f2f2f2;
 	width: 200px;
@@ -513,7 +558,21 @@ position: absolute;
 	height: 450px;
 	color:#bcbcbc;
 }
-
+.loader {
+	border-radius: 15px;
+	overflow: hidden;
+	width: 450px;
+	height: 450px;
+	color:#bcbcbc;
+}
+.loaderborder {
+	position:relative;
+top:20px;
+	border-radius: 15px;
+	overflow: hidden;
+	width: 450px;
+	height: 450px;
+}
 .musicplayerborder {
 	position: absolute;
 	top: 40px;
@@ -546,11 +605,13 @@ position: absolute;
 
 }
 .blurlaunch {
-	transition-duration: 2s;
-	  -webkit-filter: url('#blur');
-  filter: url('#blur');
-  -webkit-filter: blur(8px);
-  filter: blur(8px);
+	background-color:#f2f2f2;
+	transition-duration: 1s;
+	 width:110%;
+		 height:105%;
+	left:-5%;
+	top:-5%;
+	position:absolute;
 	
 
 }
@@ -561,7 +622,6 @@ position: absolute;
 	  font-family: lato;
   font-size: 100%;
 font-weight:300;
-  color: rgba(0,0,0,0);
   -webkit-font-smoothing: antialiased;
   padding: 0.5rem;
   font-size: 30px;
@@ -590,11 +650,9 @@ font-weight:400;
 
 }
 .open {
- -webkit-filter: url('#blur');
-  filter: url('#blur');
-  -webkit-filter: blur(0px);
-  filter: blur(0px);
-
+ 
+position:absolute;
+	top:-110%;
 }
 .opentext{
 	color:rgba(0,0,0,0);
@@ -615,6 +673,54 @@ font-weight:400;
 	background-color: #f2f2f2;
 
 	bottom: 0px;
+}
+.profileimg{
+	width:100px;
+	height:100px;
+	position:absolute;
+	top:10%;
+	left:10%;
+	float:left;
+	
+	border-style:10px solid #30bdff;
+	border-radius:50px;
+	border-radius:50px;
+  border-radius: 100%;
+	 border-radius: 100%;
+	z-index:2;
+}
+
+.profileimg:after {
+  content: '';
+  background: trasparent;
+  width: 140%;
+  height: 140%;
+  position: absolute;
+  border-radius: 100%;
+  top: -20%;
+  left: -20%;
+  opacity: 0.7;
+  box-shadow: rgba(255, 255, 255, 0.6) -4px -5px 3px -3px;
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.login{
+	width:100px;
+	height:100px;
+	position:absolute;
+	top:10%;
+	float:left;
+	left:10%;
+	border-style:none;
+	border-radius:50px;
 }
 .writeboxarea{
 	position:relative;
@@ -677,7 +783,7 @@ font-weight:400;
 
 .wave.-two {
 	animation: drift 10000ms infinite linear;
-	opacity: 0.1;
+	opacity: 0.2;
 	background: yellow;
 	z-index: -2;
 }
@@ -963,10 +1069,11 @@ a {
 	position:absolute;
 	right:35px;
 }
+
 </style>
 <script>
-		$(".appboxmusic").click(function() {
-	$('div[class^="appboxwiki"]').css("z-index", "0");
+	$(".appboxmusic").click(function() {
+$('div[class^="appboxwiki"]').css("z-index", "0");
 	$('div[class^="appboxwiki"]').animate({ opacity: 0.8 });
 	$('div[class^="appboxwiki"]').addClass("blur");
 	$('div[class^="appboxwrote"]').css("z-index", "0");
@@ -982,7 +1089,6 @@ a {
 	$(this).css("z-index", "10");
 	$(this).animate({ opacity: 1 });
 });
-
 $(".appboxwiki").click(function() {
 	$('div[class^="appboxmusic"]').css("z-index", "0");
 	$('div[class^="appboxmusic"]').animate({ opacity: 0.8 });
@@ -1000,7 +1106,6 @@ $(".appboxwiki").click(function() {
 	$(this).css("z-index", "10");
 	$(this).animate({ opacity: 1 });
 });
-
 $(".appboxwrote").click(function() {
 	$('div[class^="appboxmusic"]').css("z-index", "0");
 	$('div[class^="appboxmusic"]').animate({ opacity: 0.8 });
@@ -1102,10 +1207,12 @@ $(function() {
 		}
 	});
 });
+
 window.setTimeout(function() {
-	$(".blurlaunch").addClass("open");
-	
-}, 700);
+$(".blurlaunch").addClass("open");
+	}, 700);
+window.setTimeout(function() {$(".blurlaunch").fadeOut("fast");
+}, 1600);
 window.setTimeout(function() {
 
 	$(".usernametext").addClass("opentext");
@@ -1119,93 +1226,231 @@ alert ("Background has been set to: " + backimg);
     localStorage.setItem("background", "url("+backimg+")")
     // Retrieve
 	$('html').css("background-image", document.getElementById("result").innerHTML = localStorage.getItem("background"));
-}
+};
 $('html').css("background-image", document.getElementById("result").innerHTML = localStorage.getItem("background"));
+
+
+function testrosalt (form) {
+ // Store
+	var profimg = form.profpic.value
+alert ("Profile image has been set to: " + profimg);
+    localStorage.setItem("profileimage", profimg)
+    // Retrieve
+document.getElementById("profileimg").attr("src", localStorage.getItem("profileimage"));
+	$('profileimg').addClass("login");
+};
+
+
 
 function testrasult (form) {
  // Store
-
 	var username = form.username.value
 		localStorage.setItem("usernametext", username);
 alert ("Your name is now: " + localStorage.getItem("usernametext") );
-    document.getElementById("usernametext").innerHTML = "Welcome home, "+username+".";
-}
+    document.getElementById("usernametext").innerHTML = "Welcome home, "+username+". ";
+};
 
-    document.getElementById("usernametext").innerHTML = "Welcome home, "+ 
-			 localStorage.getItem("usernametext");
-document.getElementById("username").innerHTML = localStorage.getItem("usernametext");
+
+
 batStatus();
-
 const cs = document.getElementById("charge-status");
 const csa = document.getElementById("charge-status-ani");
 const cp = document.getElementById('charge-path');
-
 function batStatus(){
-
 	navigator.getBattery()
 		.then(function(battery){
-
 		const status = document.getElementById("status-info");
 		const chargePath = document.getElementById('charge-path');
-
 		let batLevel = battery.level * 100,
-
 			// something to do with the height of the battery? i think?
 			batPercent = battery.level * 281;
-
 		//set battery status color
 		batColors();
-
 		// full charge width = 281
 		cs.setAttribute('data-full', batPercent );
 		csa.setAttribute('to', batPercent);
 		cs.setAttribute('width', batPercent);
-
-
 		battery.charging ? chargePath.classList.toggle('hidden') : '';
-
 		// show hide the charging indicator
 		updateCharge();
-
 		function updateCharge(){
-
 			battery.charging ? cp.classList.remove('hidden') : cp.classList.add('hidden');
-
 		}
-
 		function levelChange(){
-
 			cs.setAttribute('width', batPercent);
-
 			cs.classList.add('bat-change');
-
 			setTimeout(function(){
 				cs.classList.remove('bat-change');
 			},300);
-
 		}
-
 		function batColors() {
-
 			switch( true ) {
 				case (batPercent <= 56):
 					cs.setAttribute('fill', '#c0392b');
 					break;
-
 				case (batPercent  >= 56 && batPercent <= 125):
 					cs.setAttribute('fill', '#f39c12');
 					break;
-
 				case (batPercent > 125):
 					cs.setAttribute('fill', '#2ecc71');
 			}
 		}
-
+		//LOW POWER MODE
+		if(batPercent <= 56){
+	$('.waves').fadeOut("fast");
+			$(".lowpowermode").addClass("slidein");
+}
+	
 		battery.addEventListener('chargingchange', updateCharge);
 		//battery.addEventListener('levelchange', levelChange);
-
-
 	}
 );
 }
+	
+if(localStorage.getItem("usernametext") === null ){
+	 document.getElementById("usernametext").innerHTML = "Please Open the Settings app to set up Gi-OS 7"
+	 } else{
+		 document.getElementById("usernametext").innerHTML = "Welcome home, "+ 
+			 localStorage.getItem("usernametext");
+document.getElementById("username").innerHTML = localStorage.getItem("usernametext");
+		 $("#profileimg").attr("src", localStorage.getItem("profileimage"));
+	
+		 document.getElementById("profileimg").attr("src", localStorage.getItem("profileimage"));
+	
+	 }
+	 
+var $body = document.body,
+		$wrap = document.getElementById('wrap'),
+
+		areawidth = window.innerWidth,
+		areaheight = window.innerHeight,
+
+		canvassize = 500,
+
+		length = 30,
+		radius = 5.6,
+
+		rotatevalue = 0.035,
+		acceleration = 0,
+		animatestep = 0,
+		toend = false,
+
+		pi2 = Math.PI*2,
+
+		group = new THREE.Group(),
+		mesh, ringcover, ring,
+
+		camera, scene, renderer;
+
+
+	camera = new THREE.PerspectiveCamera(65, 1, 1, 10000);
+	camera.position.z = 150;
+
+	scene = new THREE.Scene();
+	// scene.add(new THREE.AxisHelper(30));
+	scene.add(group);
+
+	mesh = new THREE.Mesh(
+		new THREE.TubeGeometry(new (THREE.Curve.create(function() {},
+			function(percent) {
+
+				var x = length*Math.sin(pi2*percent),
+					y = radius*Math.cos(pi2*3*percent),
+					z, t;
+
+				t = percent%0.25/0.25;
+				t = percent%0.25-(2*(1-t)*t* -0.0185 +t*t*0.25);
+				if (Math.floor(percent/0.25) == 0 || Math.floor(percent/0.25) == 2) {
+					t *= -1;
+				}
+				z = radius*Math.sin(pi2*2* (percent-t));
+
+				return new THREE.Vector3(x, y, z);
+
+			}
+		))(), 200, 1.1, 2, true),
+		new THREE.MeshBasicMaterial({
+			color: 0x30bdff
+			// , wireframe: true
+		})
+	);
+	group.add(mesh);
+
+	ringcover = new THREE.Mesh(new THREE.PlaneGeometry(50, 15, 1), new THREE.MeshBasicMaterial({color: 0xd1684e, opacity: 0, transparent: true}));
+	ringcover.position.x = length+1;
+	ringcover.rotation.y = Math.PI/2;
+	group.add(ringcover);
+
+	ring = new THREE.Mesh(new THREE.RingGeometry(4.3, 5.55, 32), new THREE.MeshBasicMaterial({color: 0xffffff, opacity: 0, transparent: true}));
+	ring.position.x = length+1.1;
+	ring.rotation.y = Math.PI/2;
+	group.add(ring);
+
+	// fake shadow
+	(function() {
+		var plain, i;
+		for (i = 0; i < 10; i++) {
+			plain = new THREE.Mesh(new THREE.PlaneGeometry(length*2+1, radius*3, 1), new THREE.MeshBasicMaterial({color: 0xbcbcbc, transparent: true, opacity: 0.13}));
+			plain.position.z = -2.5+i*0.5;
+			group.add(plain);
+		}
+	})();
+
+	renderer = new THREE.WebGLRenderer({
+		antialias: true
+	});
+	renderer.setPixelRatio(window.devicePixelRatio);
+	renderer.setSize(canvassize, canvassize);
+	renderer.setClearColor('#bcbcbc');
+
+	$wrap.appendChild(renderer.domElement);
+
+	$body.addEventListener('mousedown', start, false);
+	$body.addEventListener('touchstart', start, false);
+	$body.addEventListener('mouseup', back, false);
+	$body.addEventListener('touchend', back, false);
+
+	animate();
+
+
+	function start() {
+		toend = true;
+	}
+	
+	function back() {
+		toend = false;
+	}
+
+	function tilt(percent) {
+		group.rotation.y = percent*0.5;
+	}
+
+	function render() {
+
+		var progress;
+
+		animatestep = Math.max(0, Math.min(240, toend ? animatestep+1 : animatestep-4));
+		acceleration = easing(animatestep, 0, 1, 240);
+
+		if (acceleration > 0.35) {
+			progress = (acceleration-0.35)/0.65;
+			group.rotation.y = -Math.PI/2 *progress;
+			group.position.z = 50*progress;
+			progress = Math.max(0, (acceleration-0.97)/0.03);
+			mesh.material.opacity = 1-progress;
+			ringcover.material.opacity = ring.material.opacity = progress;
+			ring.scale.x = ring.scale.y = 0.9 + 0.1*progress;
+		}
+
+		renderer.render(scene, camera);
+
+	}
+
+	function animate() {
+		mesh.rotation.x += rotatevalue + acceleration;
+		render();
+		requestAnimationFrame(animate);
+	}
+
+	function easing(t,b,c,d) {if((t/=d/2)<1)return c/2*t*t+b;return c/2*((t-=2)*t*t+2)+b;}
 </script>
