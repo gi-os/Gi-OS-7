@@ -1635,6 +1635,11 @@ a {
 
 </style>
 <script>
+	$("#showappdraweropenfull").click(function() {
+		   var element = document.getElementById("appdrawer");
+   element.classList.toggle("full");
+			
+		})
 	$(".appboxmusic").click(function() {
 $('div[class^="appboxwiki"]').css("z-index", "0");
 	$('div[class^="appboxwiki"]').animate({ opacity: 0.8 });
@@ -2229,11 +2234,7 @@ function batStatus(){
 	}
 );
 }
-	$("#showappdraweropenfull").click(function() {
-		   var element = document.getElementById("appdrawer");
-   element.classList.toggle("full");
-			
-		})
+	
 if(localStorage.getItem("usernametext") === null ){
 	 document.getElementById("usernametext").innerHTML = "Please Open the Settings app to set up Gi-OS 7"
 	$('html').css("background-image", document.getElementById("result").innerHTML = localStorage.getItem("background"));
