@@ -2229,7 +2229,11 @@ function batStatus(){
 	}
 );
 }
-	
+	$("#showappdraweropenfull").click(function() {
+		   var element = document.getElementById("appdrawer");
+   element.classList.toggle("full");
+			
+		})
 if(localStorage.getItem("usernametext") === null ){
 	 document.getElementById("usernametext").innerHTML = "Please Open the Settings app to set up Gi-OS 7"
 	$('html').css("background-image", document.getElementById("result").innerHTML = localStorage.getItem("background"));
@@ -2246,10 +2250,6 @@ document.getElementById("username").innerHTML = localStorage.getItem("usernamete
 		 $('html').css("background-image", document.getElementById("result").innerHTML = localStorage.getItem("background"));
 		
 	 }
-	$("#showappdraweropenfull").click(function() {
-		   var element = document.getElementById("appdrawer");
-   element.classList.toggle("full");
-			
-		})
+	
 
 </script>
