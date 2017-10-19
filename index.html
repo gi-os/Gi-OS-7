@@ -1717,6 +1717,11 @@ a {
 
 </center>
 <script>
+$("#showappdraweropenfull").click(function() {
+		   var element = document.getElementById("appdrawer");
+   element.classList.toggle("full");
+			
+		})	
 	$(".appboxmusic").click(function() {
 $('div[class^="appboxwiki"]').css("z-index", "0");
 	$('div[class^="appboxwiki"]').animate({ opacity: 0.8 });
