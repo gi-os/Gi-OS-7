@@ -1712,7 +1712,7 @@ a {
 
 </center>
 <script>
-	$("#showappdraweropenfull").click(function() {
+$("#showappdraweropenfull").click(function() {
 		   var element = document.getElementById("appdrawer");
    element.classList.toggle("full");
 			
@@ -2343,7 +2343,11 @@ function app3 (form) {
    $("#app3page").attr("src", localStorage.getItem("app3lik"));
 };
 document.getElementById("app3page").src = localStorage.getItem("app3lik");
-
+$("#showappdraweropenfull").click(function() {
+		   var element = document.getElementById("appdrawer");
+   element.classList.toggle("full");
+			
+		})
 
 batStatus();
 const cs = document.getElementById("charge-status");
@@ -2440,4 +2444,5 @@ document.getElementById("username").innerHTML = localStorage.getItem("usernamete
    element.classList.toggle("full");
 			
 		})
+
 </script>
