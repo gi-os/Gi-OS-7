@@ -2424,7 +2424,13 @@ function batStatus(){
     alert('Desktop notifications not available in your browser. Try Chromium.'); 
     return;
   }
+$("#showappdraweropenfull").click(function() {
+		   var element = document.getElementById("appdrawer");
+   element.classList.toggle("full");
+			
+		})
 
+}
 
 
 }
