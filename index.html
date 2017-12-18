@@ -2423,6 +2423,8 @@ $("#showappdraweropenfull").click(function() {
 			
 		})
 if(localStorage.getItem("usernametext") === null ){
+	var element = document.getElementById("appdrawer");
+   element.classList.toggle("full");
 	 document.getElementById("usernametext").innerHTML = "Please Open the Settings app to set up Gi-OS 7"
 	$('html').css("background-image", document.getElementById("result").innerHTML = localStorage.getItem("background"));
 	 } else{
